@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" /> <!-- Mengatur karakter encoding menjadi UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Memastikan tampilan responsif pada perangkat mobile -->
+    
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Memuat Tailwind CSS untuk styling -->
+
+    <!-- Menghubungkan ke Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" /> <!-- Preconnect ke Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <!-- Preconnect untuk font yang diizinkan -->
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet" /> <!-- Menggunakan font Jersey 10 -->
+
+    <!-- Konfigurasi Tailwind CSS -->
+    
+    <style type="text/tailwindcss">
+      @layer base {
+        html {
+          /* Menetapkan font dasar untuk halaman */
+          font-family: "Jersey 10", sans-serif; 
+          
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black"> <!-- Mengatur background menjadi hitam -->
+    
+    <section class="container relative px-10 mx-auto border border-dotted"> <!-- Kontainer utama untuk konten -->
+      <!-- Judul -->
+      <div class="text-center">
+        <img class="w-[200px] mx-auto" src="icons/movie.svg" /> <!-- Logo atau ikon film -->
+        <h1 class="text-white md:text-[100px] text-[70px]">Find Movies!</h1> <!-- Judul utama -->
+      </div>
+
+      <!-- Bagian pencarian -->
+      <div class="flex justify-center gap-0">
+        <!-- Placeholder untuk input pencarian -->
+        <input
+          type="text"
+          class="bg-transparent border border-dotted w-[300px] placeholder:text-white/50 px-6 text-white focus:outline-none"
+          placeholder="What kind movie you think?"
+        />
+        <button
+          class="px-6 py-3 text-white bg-transparent border border-dotted"
+        >
+          Search <!-- Teks tombol pencarian -->
+        </button>
+      </div>
+
+      <!-- Konten hasil pencarian film -->
+      <div class="grid grid-cols-2 gap-10 my-10 md:grid-cols-3"> <!-- Grid untuk menampilkan card film -->
+        <!-- Card film contoh -->
+        <div class="flex flex-col border-dotted cursor-pointer hover:border">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BNzViNmQ5MTYtMmI4Yy00N2Y2LTg4NWUtYWU3MThkMTVjNjk3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+          />
+          <h3 class="text-2xl text-white">
+            Captain America: The First Avenger <!-- Judul film -->
+          </h3>
+          <p class="text-xl text-white">Years : 2011</p> <!-- Tahun rilis film -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Pop-up detail film -->
+    <section
+      class="top-0 hidden w-screen h-screen overflow-y-scroll bg-black/50"
+    >
+      <div
+        class="max-w-[800px] bg-black mx-auto md:mt-[10%] px-10 py-10 border border-dashed"
+      >
+        <div class="flex flex-col gap-7">
+          <div class="flex items-center justify-between">
+            <h4 class="text-3xl text-white">Movie Detail</h4> <!-- Judul detail film -->
+            <div>
+              <img
+                src="icons/close.svg"
+                class="w-[35px] h-[35px] cursor-pointer hover:scale-150 transition ease-in-out duration-200"
+              /> <!-- Ikon untuk menutup pop-up -->
+            </div>
+          </div>
+
+          <!-- Bagian detail film -->
+          <div class="flex flex-col justify-between gap-3 md:flex-row">
+            <!-- Gambar film -->
+            <div>
+              <img
+                src="https://m.media-amazon.com/images/M/MV5BNzViNmQ5MTYtMmI4Yy00N2Y2LTg4NWUtYWU3MThkMTVjNjk3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+              />
+            </div>
+            <!-- Deskripsi film -->
+            <div
+              class="flex flex-col justify-between px-4 py-4 text-white border"
+            >
+              <!-- Judul film di detail -->
+              <h3 class="text-[36px]">Captain America: The First Avenger</h3>
+              <!-- Nama sutradara -->
+              <p class="">
+                <b class="text-[20px] underline">Director:</b> David Baecham
+              </p>
+              <!-- Nama aktor -->
+              <p class="">
+                <b class="text-[20px] underline">Actor:</b> David Baecham, David
+                Baecham, David Baecham, David Baecham,
+              </p>
+              <!-- Nama penulis -->
+              <p class="">
+                <b class="text-[20px] underline">Writer:</b> David Baecham,
+                David Baecham
+              </p>
+              <!-- Sinopsis film -->
+              <p class="">
+                <b class="text-[20px] underline">Plot: </b> <br />
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+                eum omnis et consequuntur in harum, natus iste obcaecati quaerat
+                dolorum?
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-10">
+          <button
+            class="flex justify-between gap-1 px-4 py-1 text-white border border-dashed hover:bg-white/10"
+          >
+            Close <img src="icons/close.svg" /> <!-- Tombol untuk menutup pop-up -->
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="flex justify-center py-[100px] flex-col gap-3">
+      <h2 class="text-2xl text-center text-white">This website Created by</h2> <!-- Nama pembuat website -->
+      <img class="md:w-[30%] w-[80%] mx-auto" src="cecepgantengProfile.svg" /> <!-- Gambar profil pembuat -->
+    </footer>
+
+    <script src="app.js"></script> <!-- Memuat file JavaScript untuk fungsionalitas -->
+  </body>
+</html>
